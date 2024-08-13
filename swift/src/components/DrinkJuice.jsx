@@ -84,6 +84,7 @@ const DrinkJuice = ({ items }) => {
                         {item.image && (
                             <img
                                 src={item.image}
+                                loading="lazy"
                                 alt={item.name}
                                 className="p-2 w-full h-[70px] md:h-[180px] lg:h-[200px] object-cover rounded-lg"
                             />

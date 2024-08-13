@@ -85,6 +85,7 @@ const IceCream = ({ items }) => {
                             <img
                                 src={item.image}
                                 alt={item.name}
+                                loading='lazy'
                                 className="p-2 w-full h-[70px] md:h-[180px] lg:h-[200px] object-cover rounded-lg"
                             />
                         )}

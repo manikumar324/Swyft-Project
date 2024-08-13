@@ -18,7 +18,7 @@ const InitialScreen = () => {
       {isScreenSaverActive ? (
         <div className='flex justify-center items-center h-[100vh]'>
           <div>
-            <img src={ScreenSaver} className='w-40 md:w-56 m-auto rounded-tr-[20%] rounded-bl-[20%] ' alt="screen saver"/>
+            <img src={ScreenSaver} loading='lazy' className='w-40 md:w-56 m-auto rounded-tr-[20%] rounded-bl-[20%] ' alt="screen saver"/>
           </div>
         </div>
       ) : (
