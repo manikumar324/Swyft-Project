@@ -4,8 +4,8 @@ import { useCart } from '../components/cartContext'; // Correct import
 import { TbCategory2 } from "react-icons/tb";
 import { FaHome } from "react-icons/fa";
 import { HiShoppingCart } from "react-icons/hi";
-import { IoIosFlash } from "react-icons/io";
 import { FaRegUserCircle } from "react-icons/fa";
+import { TbTruckDelivery } from "react-icons/tb";
 import Lottie from "react-lottie";
 import laptopHello from "../assets/laptophello.json";
 
@@ -60,10 +60,10 @@ const NavbarMobile = () => {
             <p className="font-semibold text-orange-500">Cart</p>
           </div>
         </Link>
-        <Link to="/about">
+        <Link to="/orders">
           <div className="flex flex-col items-center text-sm">
-            <IoIosFlash className="text-2xl text-gray-500 hover:text-orange-600 transition duration-200 ease-in-out" />
-            <p className="font-semibold text-orange-500">About</p>
+            <TbTruckDelivery className="text-2xl text-gray-500 hover:text-orange-600 transition duration-200 ease-in-out" />
+            <p className="font-semibold text-orange-500">Orders</p>
           </div>
         </Link>
         <div
@@ -114,11 +114,11 @@ const NavbarMobile = () => {
         </Link>
 
         <Link
-          to="/about"
+          to="/orders"
           className="flex items-center mb-4 text-sm md:text-xl bg-white bg-opacity-80 backdrop-blur-3xl border border-white/10 text-gray-600 p-2 rounded-lg shadow-lg"
         >
-          <IoIosFlash className="text-3xl text-orange-600" />
-          <p className="ml-2 font-semibold hover:text-orange-500">About</p>
+          <TbTruckDelivery className="text-3xl text-orange-600" />
+          <p className="ml-2 font-semibold hover:text-orange-500">Orders</p>
         </Link>
         <div
           className="flex items-center mb-4 text-sm md:text-xl bg-white bg-opacity-80 backdrop-blur-3xl border border-white/10 text-gray-600 p-2 rounded-lg shadow-lg"

@@ -9,9 +9,11 @@ import successLottie from "../assets/ordersuccessScooter.json";
 import toast, { Toaster } from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
 import Cart from "./Cart";
+import axios from "axios";
 
 const OrderForm = () => {
   const [isModalVisible, setIsModalVisible] = useState(true);
+  const [cartItems, setCartItems] = useState([]);
   const [cart, setCart] = useState(false);
   const [form] = Form.useForm();
   const [location, setLocation] = useState({
@@ -158,23 +160,65 @@ const OrderForm = () => {
     setCart(true);
   };
 
-  const orderSubmit = () => {
-    form
-      .validateFields() // Validate form fields before proceeding
-      .then((values) => {
-        setOrderPlaced(true); // Show first Lottie animation
+  useEffect(() => {
+    const fetchCartItems = async () => {
+      try {
+        const userDataString = localStorage.getItem("userData");
+        let userId = "Guest"; // Default value if userData is not available
+
+        if (userDataString) {
+          try {
+            const userData = JSON.parse(userDataString);
+            userId = userData.uuid || "Guest"; // Default to 'Guest' if uuid is not found
+          } catch (error) {
+            console.error("Error parsing userData:", error);
+          }
+        }
+
+        const response = await axios.post("https://swyft-server.onrender.com/cart", { userId });
+        console.log("API Response:", response.data); // Verify the data structure
+        setCartItems(response.data.cartItems); // Set the state with the fetched data
+        
+      } catch (error) {
+        console.error("Error fetching cart items:", error);
+      }
+    };
+
+    fetchCartItems();
+  }, []);
+
+  const orderSubmit = async () => {
+    try {
+      // Validate form fields before proceeding
+      const values = await form.validateFields();
+  
+      // Show first Lottie animation
+      setOrderPlaced(true);
+      setTimeout(() => {
+        setOrderPlaced(false);
+        setSuccess(true); // Show second Lottie animation after 3 seconds
         setTimeout(() => {
-          setOrderPlaced(false);
-          setSuccess(true); // Show second Lottie animation after 3 seconds
-          setTimeout(() => {
-            navigate("/"); // Navigate to home after another 3 seconds
-          }, 3000);
+          navigate("/"); // Navigate to home after another 3 seconds
         }, 3000);
-      })
-      .catch((errorInfo) => {
-        console.error("Validation failed:", errorInfo);
+      }, 3000);
+  
+      // Send the cart items and userId to the AddOrders API
+      const orderApi = await axios.post("https://swyft-server.onrender.com/AddOrders", {
+        userId: localStorage.getItem("userData") ? JSON.parse(localStorage.getItem("userData")).uuid : "Guest",
+        cartItems, // Send the cart items directly
       });
+  
+      console.log("Order API Response:", orderApi.data);
+    } catch (error) {
+      if (error instanceof Error && error.name === 'ValidationError') {
+        console.error("Validation failed:", error);
+      } else {
+        console.error("Error submitting order:", error);
+      }
+    }
   };
+  
+  
 
   return (
     <>
@@ -273,19 +317,19 @@ const OrderForm = () => {
           )}
           {orderPlaced && (
             <div className="text-center">
-              <Lottie options={defaultOrderPlacedOptions} height={400} width={200} />
+              <Lottie options={defaultOrderPlacedOptions} height={400} width={300} />
               <h1 className="text-green-600 text-2xl font-bold mt-4">Order Success</h1>
             </div>
           )}
           {success && (
             <div className="text-center">
-              <Lottie options={defaultSuccessOptions} height={400} width={400} />
-              <h1 className="text-green-600 text-2xl font-bold mt-4">Order Placed</h1>
+              <Lottie options={defaultSuccessOptions} height={400} width={280} />
+              <h1 className="text-orange-600 text-2xl font-bold mt-4">Order Dispatched</h1>
             </div>
           )}
         </Modal>
       ) : (
-        cart && <Cart />
+        Cart && <Cart />
       )}
     </>
   );

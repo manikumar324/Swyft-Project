@@ -13,6 +13,7 @@ import Lottie from 'react-lottie';
 const Dashboard = lazy(() => import('./components/Dashboard'));
 const Categories = lazy(() => import('./components/categories'));
 const Cart = lazy(() => import('./components/Cart'));
+const Orders = lazy(()=> import ('./components/Orders'))
 const Vegetables = lazy(() => import('./components/Vegetables'));
 const IceCream = lazy(() => import('./components/IceCream'));
 const TeaCoffee = lazy(() => import('./components/TeaCoffee'));
@@ -124,6 +125,7 @@ const App = () => {
               <Route path="/" element={<ProtectedRoute element={Dashboard} />} />
               <Route path="/categories" element={<ProtectedRoute element={Categories} />} />
               <Route path="/cart" element={<ProtectedRoute element={Cart} />} />
+              <Route path='/orders' element={<ProtectedRoute element={Orders} />} />
               <Route path="/categories/grocery&kitchen/vegetables-fruits" element={<ProtectedRoute element={() => <Vegetables items={filterVegetables} />} />} />
               <Route path="/categories/snacks&drinks/ice-creams" element={<ProtectedRoute element={() => <IceCream items={filterIceCream} />} />} />
               <Route path="/categories/snacks&drinks/tea-coffee" element={<ProtectedRoute element={() => <TeaCoffee items={filterTeaCoffe} />} />} />
