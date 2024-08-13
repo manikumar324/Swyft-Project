@@ -4,7 +4,7 @@ import { UserOutlined, PhoneOutlined, EnvironmentOutlined, SyncOutlined } from "
 import Lottie from "react-lottie";
 import addressLottie from "../assets/address.json";
 import adressFind from "../assets/addressfind.json";
-import orderPlacedLottie from "../assets/orderSuccess.json"; 
+import orderPlacedLottie from "../assets/ordersuccess.json"; 
 import successLottie from "../assets/ordersuccessScooter.json"; 
 import toast, { Toaster } from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
