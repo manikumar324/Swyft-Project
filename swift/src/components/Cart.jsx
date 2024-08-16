@@ -5,7 +5,7 @@ import { Tooltip } from "antd";
 import OrderForm from "./OrderForm";
 import Lottie from "react-lottie";
 import { useNavigate } from "react-router-dom";
-import emptyCart from "../assets/emptycart.json";
+import emptyCart from "../assets/emptyCart.json";
 import { IoIosCloseCircleOutline } from "react-icons/io";
 
 const Cart = () => {
@@ -151,7 +151,7 @@ const Cart = () => {
           </div>
         </>
       ) : (
-        <AddressModal />
+        <OrderForm />
       )}
     </>
   );
