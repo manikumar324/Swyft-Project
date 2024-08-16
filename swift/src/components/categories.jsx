@@ -120,7 +120,7 @@ const Categories = () => {
           </div>
           <h2 className='typing text-lg ml-3 md:text-2xl font-bold text-orange-500'>Snacks & Drinks</h2>
         </div>
-        <div className='grid grid-cols-4 gap-4 md:gap-6 mx-2 mb-20'>
+        <div className='grid grid-cols-4 gap-4 md:gap-6 mx-2 mb-24'>
         <Link to="/categories/snacks&drinks/cooldrinks-juices" className='col-span-2'>
                 <div>
                     <img src={drink} loading="lazy"  alt=''className='h-[60px] w-full bg-gray-100 p-2 rounded-md md:h-[120px] md:p-5 hover:shadow-2xl transition-shadow duration-300'/>
