@@ -84,31 +84,31 @@ const Categories = () => {
             <Link to="/categories/grocery&kitchen/atta-rice-dal&more">
                 <div>
                     <img src={rice} loading="lazy"  alt=''className='h-[60px] w-full bg-gray-100 p-1 rounded-md md:h-[120px] md:p-3 hover:shadow-2xl transition-shadow duration-300'/>
-                    <h3 className='font-medium text-xs md:font-bold md:text-lg md:text-center'>Atta,Rice,<br className='md:hidden'/>Oil & Dals</h3>
+                    <h3 className='font-medium text-xs md:font-bold md:text-lg text-center'>Atta,Rice,<br className='md:hidden'/>Oil & Dals</h3>
                 </div>
             </Link>
             <Link to="/categories/grocery&kitchen/meat-fish&more">
                 <div>
                     <img src={meat} loading="lazy"  alt=''className='h-[60px] w-full bg-gray-100 pb-2 md:p-0 rounded-md md:h-[120px] hover:shadow-2xl transition-shadow duration-300'/>
-                    <h3 className='font-medium text-xs md:font-bold md:text-lg md:text-center'>Meat,Fish<br className='md:hidden'/><span className='ml-2'>& Eggs</span></h3>
+                    <h3 className='font-medium text-xs md:font-bold md:text-lg text-center'>Meat,Fish<br className='md:hidden'/><span className='ml-2'>& Eggs</span></h3>
                 </div>
             </Link>
             <Link to="/categories/grocery&kitchen/dry-fruits">
             <div>
                 <img src={masala}  loading="lazy" alt=''className='h-[60px] w-full bg-gray-100 p-2 rounded-md md:h-[120px] md:p-3 hover:shadow-2xl transition-shadow duration-300'/>
-                <h3 className='font-medium text-xs md:font-bold md:text-lg md:text-center'>Dry Fruits</h3>
+                <h3 className='font-medium text-xs md:font-bold md:text-lg text-center'>Dry Fruits</h3>
             </div>
             </Link>
             <Link to="/categories/grocery&kitchen/breakfast">
             <div>
                 <img src={breakfast}  loading="lazy" alt=''className='h-[60px] w-full bg-gray-100 p-2 rounded-md md:h-[120px] md:p-3 hover:shadow-2xl transition-shadow duration-300'/>
-                <h3 className='font-medium text-xs md:font-bold md:text-lg md:text-center'>Breakfast &<br className='md:hidden'/><span className='ml-2'>Sauces</span></h3>
+                <h3 className='font-medium text-xs md:font-bold md:text-lg text-center'>Breakfast<br className='md:hidden'/><span className='ml-2'>& Sauces</span></h3>
             </div>
             </Link>
             <Link to="/categories/grocery&kitchen/packaged-food">
             <div>
                 <img src={packaged} loading="lazy"  alt=''className='h-[60px] w-full bg-gray-100 p-1 px-2 rounded-md md:h-[120px] md:p-2 hover:shadow-2xl transition-shadow duration-300'/>
-                <h3 className='font-medium text-xs md:font-bold md:text-lg md:text-center'>Packaged<br className='md:hidden'/><span className='ml-2'>Food</span></h3>
+                <h3 className='font-medium text-xs md:font-bold md:text-lg text-center'>Packaged<br className='md:hidden'/><span className='ml-2'>Food</span></h3>
             </div>
             </Link>
         </div>
@@ -124,7 +124,7 @@ const Categories = () => {
         <Link to="/categories/snacks&drinks/cooldrinks-juices" className='col-span-2'>
                 <div>
                     <img src={drink} loading="lazy"  alt=''className='h-[60px] w-full bg-gray-100 p-2 rounded-md md:h-[120px] md:p-5 hover:shadow-2xl transition-shadow duration-300'/>
-                    <h3 className='font-medium text-xs md:font-bold text-center md:text-lg md:text-center'>Cold Drinks<br className='md:hidden'/><span className='ml-2'>& Juices</span></h3>
+                    <h3 className='font-medium text-xs md:font-bold text-center md:text-lg'>Cold Drinks<br className='md:hidden'/><span className='ml-2'>& Juices</span></h3>
                 </div>
             </Link>
             <Link to="/categories/snacks&drinks/tea-coffee" >
