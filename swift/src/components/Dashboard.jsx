@@ -73,7 +73,7 @@ const Dashboard = () => {
       </div>
 
       <NavbarMobile />
-      <div className="bg-white bg-opacity-80 mb-14 backdrop-blur-3xl  md:ml-36 lg:ml-44 xl:ml-44  py-2 md:py-0">
+      <div className="bg-white bg-opacity-80 mb-20 backdrop-blur-3xl  md:ml-36 lg:ml-44 xl:ml-44  py-2 md:py-0">
         <h1 className="text-center text-xl md:text-3xl p-2 font-bold text-orange-500">
           OUR SERVICES
         </h1>
