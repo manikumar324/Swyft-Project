@@ -2,23 +2,23 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import toast, { Toaster } from "react-hot-toast";
 import { Tooltip } from "antd";
-import OrderForm from '../components/OrderForm';
+import OrderForm from "./OrderForm";
 import Lottie from "react-lottie";
 import { useNavigate } from "react-router-dom";
-import emptyCart from "../assets/emptyCart.json";
+import emptyCart from "../assets/emptycart.json";
 import { IoIosCloseCircleOutline } from "react-icons/io";
-import NavbarMobile from "./NavbarMobile";
 
 const Cart = () => {
   const [cartItems, setCartItems] = useState([]);
   const [buy, setBuy] = useState(false);
-  const navigate = useNavigate(); // Corrected the useHistory hook
+  const [lengthOfCart, setCartLength] = useState(0);
+  const history = useNavigate();
 
   const toggleAddressModal = () => {
     if (cartItems.length === 0) {
       toast.error("Add items to cart");
       setTimeout(() => {
-        navigate("/categories");
+        history("/categories");
       }, 3000);
     } else {
       setBuy(!buy);
@@ -50,8 +50,8 @@ const Cart = () => {
         }
 
         const response = await axios.post("https://swyft-server.onrender.com/cart", { userId });
-        console.log("API Response:", response.data);
         setCartItems(response.data.cartItems);
+        updateLocalCart(response.data.cartItems);
       } catch (error) {
         console.error("Error fetching cart items:", error);
       }
@@ -60,10 +60,23 @@ const Cart = () => {
     fetchCartItems();
   }, []);
 
+  const updateLocalCart = (items) => {
+    localStorage.setItem('cart', JSON.stringify(items));
+
+    // Calculate unique items
+    const uniqueItems = new Set(items.map(item => item._id));
+    const length = uniqueItems.size; // Unique item count
+    setCartLength(length);
+    localStorage.setItem('cartLength', length);
+    localStorage.setItem('uniqueItems', JSON.stringify([...uniqueItems]));
+  };
+
   const handleRemoveItem = async (itemId) => {
     try {
       await axios.delete(`https://swyft-server.onrender.com/removefromcart`, { data: { itemId } });
-      setCartItems(cartItems.filter((item) => item._id !== itemId));
+      const updatedCartItems = cartItems.filter((item) => item._id !== itemId);
+      setCartItems(updatedCartItems);
+      updateLocalCart(updatedCartItems);
       toast.success("Item Removed");
     } catch (error) {
       console.error("Error removing item:", error);
@@ -77,14 +90,12 @@ const Cart = () => {
     return Math.floor(acc + finalPrice);
   }, 0);
 
-  const cartLength = cartItems.length;
-
   return (
     <>
       {!buy ? (
         <>
           <Toaster />
-          <div className="container overflow-y-auto h-[80vh] mx-auto p-4">
+          <div className="container overflow-y-auto h-[70vh] mx-auto p-4">
             {cartItems.length === 0 ? (
               <div className="flex justify-center items-center h-[70vh]">
                 <Lottie options={defaultOptions} height={350} width={400} />
@@ -97,19 +108,18 @@ const Cart = () => {
                 return (
                   <div
                     key={item._id}
-                    className="relative flex items-center md:ml-36 lg:ml-44 xl:ml-56 justify-around md:mb-4 mb-8 p-8 bg-white rounded-lg shadow-lg"
+                    className="relative flex items-center md:ml-36 lg:ml-44 xl:ml-56 justify-around mb-3  p-8 bg-white rounded-lg shadow-lg"
                   >
                     <button
                       onClick={() => handleRemoveItem(item._id)}
-                      className="absolute top-0 right-2 text-orange-600 bg-white/25 backdrop-blur-sm shadow-lg rounded-full w-8 h-8 flex items-center justify-center"
+                      className="absolute top-0 right-2 text-orange-600 bg-white/25 backdrop-blur-sm shadow-lg  rounded-full  w-8 h-8 flex items-center justify-center"
                     >
-                      <IoIosCloseCircleOutline />
+                      <IoIosCloseCircleOutline/>
                     </button>
                     <Tooltip title={item.name}>
                       <img
                         src={item.image}
                         alt={item.name}
-                        loading="lazy"
                         className="w-16 h-16 object-cover rounded-lg cursor-pointer"
                       />
                     </Tooltip>
@@ -126,10 +136,10 @@ const Cart = () => {
             )}
             <div className="fixed md:ml-20 lg:ml-24 xl:ml-24 bottom-16 md:bottom-0 left-0 w-full bg-opacity-50 backdrop-blur-md bg-white p-4 shadow-lg">
               <div className="container mx-auto flex justify-around items-center">
-                <h3 className="text-xl font-bold">TOTAL</h3>
-                <p className="text-lg font-bold text-purple-700">₹{subtotal}</p>
+                <h3 className="text-xl font-bold">Subtotal</h3>
+                <p className="text-lg font-bold text-purple-600">₹{subtotal}</p>
               </div>
-              <div className="flex mt-4 justify-center items-center">
+              <div className="flex mt-4 mb-5 justify-center items-center">
                 <button
                   onClick={toggleAddressModal}
                   className="bg-black font-bold text-white p-3 w-full md:w-96 lg:w-[800px] mx-auto"
@@ -141,9 +151,8 @@ const Cart = () => {
           </div>
         </>
       ) : (
-        <OrderForm />
+        <AddressModal />
       )}
-      <NavbarMobile cartNumber={cartLength} />
     </>
   );
 };

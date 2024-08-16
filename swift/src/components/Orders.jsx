@@ -51,27 +51,27 @@ const Orders = () => {
                 </span>
               </Disclosure.Button>
               <Disclosure.Panel className="pt-4">
-                <div className="grid grid-cols-1  overflow-y-auto sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div className="grid grid-cols-1  px-3 py-1 overflow-y-auto sm:grid-cols-2 lg:grid-cols-4 gap-8">
                   {items.map(item => (
-                    <div key={item._id} className="bg-white  flex flex-col justify-around  shadow-lg rounded-lg overflow-hidden">
+                    <div key={item._id} className="bg-white  flex flex-col justify-center items-center  shadow-lg rounded-lg overflow-hidden">
                       <img
                         src={item.image}
                         alt={item.name}
-                        className="h-16 w-16 mt-5 self-center md:self-start md:h-24 md:w-28 object-cover"
+                        className="h-16 w-16 mt-5 self-center md:self-center md:h-24 md:w-28 object-cover"
                       />
                       <div className="p-6">
                         <h3 className="text-2xl font-bold text-gray-800">{item.name}</h3>
                         <p className="text-gray-600 mt-2">
-                          Quantity: <span className="font-semibold">{item.quantity}</span>
+                          Quantity : <span className="font-semibold">{item.quantity}</span>
                         </p>
                         <p className="text-gray-600 mt-2">
-                          Price: <span className="font-semibold">₹{item.price}</span>
+                          Price : <span className="font-semibold">₹{item.price}</span>
                         </p>
                         <p className="text-gray-600 mt-2">
-                          Discount: <span className="font-semibold">{item.discount}%</span>
+                          Discount : <span className="font-semibold">{item.discount}%</span>
                         </p>
                         <p className="text-gray-600 mt-2">
-                          Total: <span className="font-semibold">₹{item.price - (item.price * item.discount) / 100}</span>
+                          Total : <span className="font-semibold">₹{item.price - (item.price * item.discount) / 100}</span>
                         </p>
                         <p className="text-gray-500 text-sm mt-4">Ordered on {new Date(item.createdAt).toLocaleDateString()}</p>
                       </div>

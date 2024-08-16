@@ -50,6 +50,9 @@ const Loginform = () => {
       if (response.data.success) {
         toast.success(response.data.message);
         setIsSignup(false);
+        setEmail('');
+        setPassword('');
+        setName('');
       } else {
         toast.error(response.data.message || 'Signup failed');
       }
@@ -61,15 +64,17 @@ const Loginform = () => {
   const handleForgotPassword = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post('https://swyft-server.onrender.com/forgot-password', { email, password });
+      const response = await axios.post('https://swyft-server.onrender.com/forgot-password', { email, newPassword:password });
       if (response.data.success) {
         toast.success(response.data.message);
         setIsForgotPassword(false);
+        setEmail('');
+        setPassword('');
       } else {
         toast.error(response.data.message || 'Failed to reset password');
       }
     } catch (error) {
-      toast.error(error.response?.data?.error || 'An error occurred during password reset');
+      toast.error(error.response?.data?.message || 'An error occurred during password reset');
     }
   };
 
@@ -209,6 +214,8 @@ const Loginform = () => {
                 } else {
                   setIsForgotPassword(true);
                 }
+                 // Reset password field when switching modes
+                 setPassword('');
               }}
             >
               {isSignup ? 'Login' : isForgotPassword ? 'Login' : 'Reset Password'}

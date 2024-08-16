@@ -26,7 +26,7 @@ const LoginSuccess = () => {
   }
 
   return (
-    <div className='flex flex-col justify-around items-center h-[100vh]'>
+    <div className='flex flex-col justify-around items-center h-[80vh]'>
       <Lottie options={defaultOptions} height={400} width={330}/>
       <h1 className='text-xl font-bold'>Welcome To Swyft, <span className='animate-pulse text-orange-500'>{userName}</span>!</h1>
     </div>

@@ -120,7 +120,7 @@ const Categories = () => {
           </div>
           <h2 className='typing text-lg ml-3 md:text-2xl font-bold text-orange-500'>Snacks & Drinks</h2>
         </div>
-        <div className='grid grid-cols-4 gap-4 md:gap-6 mx-2 mb-16'>
+        <div className='grid grid-cols-4 gap-4 md:gap-6 mx-2 mb-20'>
         <Link to="/categories/snacks&drinks/cooldrinks-juices" className='col-span-2'>
                 <div>
                     <img src={drink} loading="lazy"  alt=''className='h-[60px] w-full bg-gray-100 p-2 rounded-md md:h-[120px] md:p-5 hover:shadow-2xl transition-shadow duration-300'/>
@@ -142,13 +142,13 @@ const Categories = () => {
             <Link to="/categories/snacks&drinks/frozen-items">
                 <div>
                     <img src={frozen} alt=''className='h-[60px] w-full bg-gray-100 p-1 rounded-md md:h-[120px] md:p-2 hover:shadow-2xl transition-shadow duration-300'/>
-                    <h3 className='font-medium text-xs md:font-bold md:text-lg md:text-center'>Frozen<br className='md:hidden'/> Food</h3>
+                    <h3 className='font-medium text-xs md:font-bold md:text-lg text-center'>Frozen<br className='md:hidden'/> Food</h3>
                 </div>
             </Link>
             <Link to="/categories/snacks&drinks/sweet-items">
                 <div>
                     <img src={sweet} alt=''className='h-[60px] w-full bg-gray-100 p-1 rounded-md md:h-[120px] hover:shadow-2xl transition-shadow duration-300'/>
-                    <h3 className='font-medium text-xs md:font-bold md:text-lg md:text-center'>Sweet <br className='md:hidden'/>Cravings</h3>
+                    <h3 className='font-medium text-xs md:font-bold md:text-lg text-center'>Sweet <br className='md:hidden'/>Cravings</h3>
                 </div>
             </Link>
             <Link to="/categories/snacks&drinks/chips-munchies&more">
@@ -160,7 +160,7 @@ const Categories = () => {
             <Link to="/categories/snacks&drinks/biscuits-cookies">
                 <div>
                     <img src={biscuit}  loading="lazy" alt=''className='h-[60px] w-full bg-gray-100 p-1 rounded-md md:h-[120px] hover:shadow-2xl transition-shadow duration-300'/>
-                    <h3 className='font-medium text-xs  md:font-bold md:text-lg md:text-center'>Biscuits<br className='md:hidden'/>& Cookies</h3>
+                    <h3 className='font-medium text-xs  md:font-bold md:text-lg text-center'>Biscuits<br className='md:hidden'/>& Cookies</h3>
                 </div>
             </Link>
         </div>
