@@ -1,10 +1,9 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import { useCart } from "../components/CartContext"; // Correct import
+import { useCart } from "../components/cartContext"; // Correct import
 import { TbCategory2 } from "react-icons/tb";
 import { FaHome } from "react-icons/fa";
 import { HiShoppingCart } from "react-icons/hi";
-import { IoIosFlash } from "react-icons/io";
 import { FaRegUserCircle } from "react-icons/fa";
 import Lottie from "react-lottie";
 import { TbTruckDelivery } from "react-icons/tb";
