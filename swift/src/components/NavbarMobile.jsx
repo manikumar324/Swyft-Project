@@ -32,7 +32,7 @@ const NavbarMobile = () => {
   return (
     <div>
       {/* Mobile and small screens */}
-      <div className="navbar-mobile fixed bottom-0 left-0 right-0 h-[12vh] bg-gray-300 shadow-lg rounded-tr-lg rounded-tl-lg flex justify-around items-center text-gray-700 md:hidden">
+      <div className="navbar-mobile fixed bottom-0 left-0 right-0 h-[12vh] bg-gray-200 shadow-lg rounded-tr-lg rounded-tl-lg flex justify-around items-center text-gray-700 md:hidden">
         <Link to="/categories" aria-label="Categories">
           <div className="flex flex-col items-center text-sm">
             <TbCategory2 className="text-2xl text-gray-500 hover:text-orange-600 transition duration-200 ease-in-out" />

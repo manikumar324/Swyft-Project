@@ -73,7 +73,7 @@ const Dashboard = () => {
       </div>
 
       <NavbarMobile />
-      <div className="bg-white bg-opacity-80 mb-10 backdrop-blur-3xl  md:ml-36 lg:ml-44 xl:ml-44  py-2 md:py-0">
+      <div className="bg-white bg-opacity-80 mb-14 backdrop-blur-3xl  md:ml-36 lg:ml-44 xl:ml-44  py-2 md:py-0">
         <h1 className="text-center text-xl md:text-3xl p-2 font-bold text-orange-500">
           OUR SERVICES
         </h1>
@@ -101,7 +101,7 @@ const Dashboard = () => {
               your health and satisfaction.
             </p>
           </div>
-          <div className="flex flex-col justify-center rounded-md shadow-xl hover:shadow-2xl transition-shadow duration-300 items-center p-6 m-2 mb-6 bg-white bg-opacity-80 backdrop-blur-3xl  md:p-6">
+          <div className="flex flex-col justify-center rounded-md shadow-xl hover:shadow-2xl transition-shadow duration-300 items-center p-6 m-2 mb-4 bg-white bg-opacity-80 backdrop-blur-3xl  md:p-6">
             <div className="flex items-center justify-center w-[100px] h-[100px] md:w-[150px] md:h-[150px]">
               <Lottie animationData={payment} />
             </div>
