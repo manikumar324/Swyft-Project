@@ -99,7 +99,7 @@ const NavbarMobile = () => {
           aria-label="Types"
         >
           <TbCategory2 className="text-3xl text-gray-500 hover:text-orange-600" />
-          <p className="ml-2 font-semibold">Types</p>
+          <p className="ml-2 font-semibold">Categories</p>
         </Link>
         <Link
           to="/"

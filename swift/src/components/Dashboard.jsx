@@ -37,7 +37,7 @@ const Dashboard = () => {
 
   return (
     <>
-      <div className="overflow-hidden md:ml-36 lg:ml-44 xl:ml-64">
+      <div className="overflow-hidden md:ml-36 lg:ml-32 xl:ml-44">
         <Slider {...settings}>
           {animations.map((animation, index) => (
             <div key={index}>
@@ -73,7 +73,7 @@ const Dashboard = () => {
       </div>
 
       <NavbarMobile />
-      <div className="bg-white bg-opacity-80 mb-20 backdrop-blur-3xl  md:ml-36 lg:ml-44 xl:ml-64  py-2 md:py-0">
+      <div className="bg-white bg-opacity-80 mb-10 backdrop-blur-3xl  md:ml-36 lg:ml-44 xl:ml-44  py-2 md:py-0">
         <h1 className="text-center text-xl md:text-3xl p-2 font-bold">
           Our Services
         </h1>
