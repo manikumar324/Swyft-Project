@@ -74,7 +74,7 @@ const Dashboard = () => {
 
       <NavbarMobile />
       <div className="bg-white bg-opacity-80 mb-20 backdrop-blur-3xl  md:ml-36 lg:ml-44 xl:ml-44  py-2 md:py-0">
-        <h1 className="text-center text-xl md:text-3xl p-2 font-bold text-orange-500">
+        <h1 className="text-center text-xl md:text-3xl p-2 font-bold">
           OUR SERVICES
         </h1>
         <hr className="h-2  mx-2" />
@@ -83,7 +83,7 @@ const Dashboard = () => {
             <div className="flex items-center justify-center w-[100px] h-[100px] md:w-[150px] md:h-[150px]">
               <Lottie animationData={fastdelivery} />
             </div>
-            <h1 className="font-bold text-xl py-2 mt-2">Fastest Delivery</h1>
+            <h1 className="font-bold text-xl py-2 mt-2 text-orange-500">Fastest Delivery</h1>
             <p className="text-gray-500 text-md">
               Get your groceries delivered at lightning speed! With our swift
               delivery service, you can count on receiving your essentials in
@@ -94,7 +94,7 @@ const Dashboard = () => {
             <div className="flex items-center justify-center w-[100px] h-[100px] md:w-[150px] md:h-[150px]">
               <Lottie animationData={fresh} />
             </div>
-            <h1 className="font-bold text-xl py-2">Fresh Products</h1>
+            <h1 className="font-bold text-xl py-2 text-orange-500">Fresh Products</h1>
             <p className="text-gray-500 text-md">
               We offer the freshest products, carefully selected each day. Savor
               the taste of quality with every bite, knowing that we prioritize
@@ -105,7 +105,7 @@ const Dashboard = () => {
             <div className="flex items-center justify-center w-[100px] h-[100px] md:w-[150px] md:h-[150px]">
               <Lottie animationData={payment} />
             </div>
-            <h1 className="font-bold text-xl py-2">Cash On Delivery</h1>
+            <h1 className="font-bold text-xl py-2 text-orange-500">Cash On Delivery</h1>
             <p className="text-gray-500 text-md">
               Prefer paying in cash? Choose our Cash on Delivery option and pay
               for your groceries when they arrive at your doorstep. It’s a
