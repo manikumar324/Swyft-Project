@@ -58,11 +58,11 @@ const NavbarMobile = () => {
                   !
                 </span>
               ) : cartLength > 0 ? (
-                <span className="absolute top-0 right-0 w-4 h-4 text-xs flex items-center justify-center bg-red-500 text-white font-bold p-2 rounded-full">
+                <span className="absolute top-0 right-0 w-4 h-4 text-xs flex items-center justify-center bg-black text-white font-bold p-2 rounded-full">
                   {cartLength}
                 </span>
               ) : (
-                <span className="flex items-center justify-center absolute top-0 right-0 h-4 w-4 text-xs text-white bg-red-500 font-bold p-2 rounded-full">
+                <span className="flex items-center justify-center absolute top-0 right-0 h-4 w-4 text-xs text-white bg-black font-bold p-2 rounded-full">
                   0
                 </span>
               )}

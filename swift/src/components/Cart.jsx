@@ -97,7 +97,7 @@ const Cart = () => {
           <Toaster />
           <div className="container overflow-y-auto h-[70vh] mx-auto p-4">
             {cartItems.length === 0 ? (
-              <div className="flex justify-center items-center h-[64vh]">
+              <div className="flex justify-center items-center h-[70vh]">
                 <Lottie options={defaultOptions} height={350} width={400} />
               </div>
             ) : (
@@ -136,7 +136,7 @@ const Cart = () => {
             )}
             <div className="fixed md:ml-20 lg:ml-24 xl:ml-24 bottom-16 md:bottom-0 left-0 w-full bg-opacity-50 backdrop-blur-md bg-white p-4 shadow-lg">
               <div className="container mx-auto flex justify-around items-center">
-                <h3 className="text-xl font-bold">TOTAL</h3>
+                <h3 className="text-xl font-bold">Subtotal</h3>
                 <p className="text-lg font-bold text-purple-600">₹{subtotal}</p>
               </div>
               <div className="flex mt-4 mb-5 justify-center items-center">
