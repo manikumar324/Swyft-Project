@@ -10,7 +10,7 @@ import { GrSwift } from "react-icons/gr";
 import axios from "axios";
 import Cookie from "js-cookie";
 import { Toaster, toast } from "react-hot-toast";
-import LoginSuccess from "./LoginSuccess";
+import LoginSuccess from "./loginSuccess";
 import Dashboard from "./Dashboard";
 import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
